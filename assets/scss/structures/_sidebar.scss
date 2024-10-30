@@ -1,0 +1,129 @@
+//
+// SIDEBAR
+// ----------------------------------------------------------------
+// Wrapping smart & custom lists, with "Add list" button
+// ----------------------------------------------------------------
+.lo-sidebar {
+    --width: auto;
+
+    position: relative;
+    display: none;
+    flex-direction: column;
+    width: var(--width);
+    min-width: var(--width);
+    background-color: var(--C-APP);
+    border-bottom-left-radius: var(--RC);
+    //overflow: hidden;
+
+    @include mq($until: desktop) {
+        position: absolute;
+        z-index: 100;
+        left: 1px;
+        right: 1px;
+        top: 46px;
+        bottom: 1px;
+        width: auto;
+    }
+
+    @include mq($from: desktop) {
+        --width: max(var(--SIDEBAR-MIN-W), var(--SIDEBAR-W));
+
+        display: flex;
+        border-top-left-radius: var(--RC);
+        border: 1px solid var(--DIVIDER);
+        border-right: none;
+    }
+
+    .lo-wrapper--fullscreen & {
+        border-radius: 0;
+    }
+}
+
+// Toggle lists/tasks view on mobile view only
+.lo-sidebar__switch {
+    --bg: transparent;
+    --bg-hover: transparent;
+    --color: var(--TC);
+    --color-hover: var(--TC);
+
+    height: 100%;
+    margin-right: auto;
+    padding-left: var(--PXS);
+    padding-right: var(--PS);
+    border: 1px solid var(--C-G100);
+    border-left: none;
+    border-radius: 30px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    > i {
+        color: var(--TC--LIGHTEN);
+    }
+
+    @include mq($from: desktop) {
+        display: none;
+    }
+}
+
+.lo-sidebar--expanded {
+    display: flex;
+}
+
+// Toggle sidebar view between collapsed & expanded
+// on desktop view only
+.lo-sidebar__toggle {
+    position: absolute;
+    z-index: 10;
+    top: 43px;
+    right: -12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 40px;
+    font-size: .825rem;
+    color: var(--TC--LIGHT);
+    background-color: var(--C-APP);
+    border: 1px solid var(--C-G100);
+    border-radius: var(--R);
+    transition: var(--T);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--TC);
+        border-color: var(--C-G200);
+    }
+
+    @include mq($until: desktop) {
+        display: none;
+    }
+}
+
+.lo-sidebar--collapsed {
+    @include mq($from: desktop) {
+        --width: var(--SIDEBAR-CW);
+
+        .lo-list__name,
+        .lo-lists__add {
+            display: none;
+        }
+    
+        .lo-list__inner {
+            justify-content: center;
+            padding: var(--PXS);
+        }
+    
+        .lo-sidebar__toggle {
+            width: 20px;
+            right: -20px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+    
+            i {
+                &:before {
+                    content: "\f101";
+                }
+            }
+        }
+    }
+}

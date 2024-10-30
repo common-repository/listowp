@@ -1,0 +1,97 @@
+//
+// BUTTON
+// ----------------------------------------------------------------
+// Class modifiers for default and action buttons
+// ----------------------------------------------------------------
+// Resets default button style & avoids override issues
+// ----------------------------------------------------------------
+.lo-btn {
+    --bg: transparent;
+    --bg-hover: transparent;
+    --color: inherit;
+    --color-hover: inherit;
+    --radius: var(--R);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--PXS);
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--color);
+    background-color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: none;
+    outline: none;
+    transition: var(--T);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--color-hover);
+        background-color: var(--bg-hover);
+    }
+
+    &:active,
+    &:focus {
+        color: var(--color);
+        background-color: var(--bg);
+
+        &:hover {
+            color: var(--color-hover);
+            background-color: var(--bg-hover);
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+//
+// Default button class modifier
+// ----------------------------------------------------------------
+.lo-btn--default {
+    padding: 0 var(--PS);
+    height: 2.35rem;
+}
+
+//
+// Small button class modifier
+// ----------------------------------------------------------------
+.lo-btn--sm {
+    padding: 0 var(--PXS);
+    height: 2rem;
+    font-size: .9rem;
+}
+
+//
+// Link button class modifier
+// ----------------------------------------------------------------
+.lo-btn--link {
+    --bg: transparent;
+    --bg-hover: var(--C-G50);
+    --color: var(--TC--LIGHT);
+    --color-hover: var(--TC);
+    --border-color: var(--C-G200);
+
+    border: 1px solid var(--border-color);
+}
+
+//
+// Action button class modifier
+// ----------------------------------------------------------------
+.lo-btn--action {
+    --bg: var(--C-BRAND);
+    --bg-hover: var(--C-BRAND--DARK);
+    --color: #fff;
+    --color-hover: #fff;
+    --border-color: var(--C-BRAND--DARK);
+
+    border: 1px solid var(--border-color);
+}

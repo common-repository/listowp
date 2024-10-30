@@ -1,0 +1,38 @@
+//
+// MAIN COLUMN
+// ----------------------------------------------------------------
+// Wrapping new task form & tasks list
+// ----------------------------------------------------------------
+.lo-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    background-color: var(--C-G50);
+    border: 1px solid var(--DIVIDER--LIGHT);
+    border-radius: var(--RC);
+
+    @include mq($from: desktop) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .lo-wrapper--fullscreen & {
+        border-radius: 0;
+    }
+}
+
+.lo-main__actions {
+    @include mq($until: desktop) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: var(--PXS);
+        min-height: 45px;
+        padding-top: var(--PXS);
+        padding-right: var(--PXS);
+        background-color: var(--C-APP);
+        border-top-left-radius: var(--RC);
+        border-top-right-radius: var(--RC);
+    }
+}

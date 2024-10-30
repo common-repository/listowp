@@ -1,0 +1,10 @@
+.loa-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--P);
+
+    @include mq($from: 1200px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

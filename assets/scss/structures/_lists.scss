@@ -1,0 +1,167 @@
+//
+// LISTS
+// ----------------------------------------------------------------
+// Wrapping inner container with lists
+// ----------------------------------------------------------------
+.lo-lists {}
+
+//
+// Lists inner container - wrapping list items
+// ----------------------------------------------------------------
+.lo-lists__inner {
+    display: flex;
+    flex-direction: column;
+
+    // .lo-lists--smart & {
+    //     min-height: 63px;
+    // }
+}
+
+//
+// New list form - wrapping new list form & "Add list" button
+// ----------------------------------------------------------------
+.lo-lists__form {
+    position: relative;
+    border-top: 1px solid var(--DIVIDER);
+}
+
+//
+// New list button
+// ----------------------------------------------------------------
+.lo-lists__add-wrapper {
+    display: none;
+
+    .lo-sidebar--expanded & {
+        display: block;
+    }
+
+    @include mq($from: desktop) {
+        display: block;
+    }
+}
+
+.lo-lists__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--PXS);
+    padding: var(--PS);
+    font-weight: 500;
+    color: var(--TC);
+
+    i {
+        color: var(--C-BRAND);
+    }
+ 
+    @include mq($from: desktop) {
+        color: var(--TC--LIGHT);
+        transition: var(--T);
+        cursor: pointer;
+    
+        i {
+            color: var(--C-G400);
+            transition: var(--T);
+        }
+    
+        &:hover {
+            color: var(--TC);
+    
+            i {
+                color: var(--C-BRAND);
+            }
+        }
+    }
+}
+
+//
+// New list form
+// ----------------------------------------------------------------
+.lo-lists__add-form {
+    display: none;
+    align-items: center;
+    padding: var(--PXS) var(--PS);
+
+    .lo-sidebar--expanded & {
+        display: flex;
+    }
+
+    @include mq($from: desktop) {
+        display: flex;
+    }
+}
+
+//
+// New list form actions
+// ----------------------------------------------------------------
+.lo-lists__add-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+//
+// New list form single action button
+// ----------------------------------------------------------------
+.lo-lists__add-form-action {
+    --bg: transparent;
+    --bg-hover: transparent;
+    --color: var(--TC--LIGHT);
+    --color-hover: var(--TC--LIGHT);
+
+    position: relative;
+    padding: var(--PXS);
+    font-size: 1.35rem;
+
+    > i {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:last-child {
+        --color: var(--C-BRAND);
+        --color-hover: var(--C-BRAND);
+
+        padding-right: 0;
+    }
+
+    &:hover {}
+
+    &:disabled {
+        --color: var(--TC--LIGHTEN);
+        --color-hover: var(--TC--LIGHTEN);
+
+        &:hover {}
+    }
+}
+
+//
+// Smart lists class modifier
+// ----------------------------------------------------------------
+.lo-lists--smart {
+    padding-bottom: 0;
+
+    .lo-lists__inner {
+        min-height: 63px;
+
+        @include mq($until: desktop) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--PXS);
+            padding: var(--PXS);
+        }
+    }
+}
+
+//
+// Custom lists class modifier
+// ----------------------------------------------------------------
+.lo-lists--custom {
+    flex-grow: 1;
+    overflow: auto;
+    border-bottom-left-radius: var(--RC);
+    box-shadow: inset 0 3px 3px rgba(0,0,0,.08);
+
+    .lo-wrapper--fullscreen & {
+        border-radius: 0;
+    }
+}

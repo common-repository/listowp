@@ -1,0 +1,179 @@
+.lo-listowp,
+.wp-admin {
+    // SPACING
+    --P: 30px;
+    --PS: calc(var(--P) / 2);
+    --PXS: calc(var(--P) / 3);
+
+    // BORDER-RADIUS
+    --R: 4px;
+    --RM: calc(var(--R) * 2);
+    --RL: calc(var(--R) * 3);
+    --RC: var(--RL); // Container radius
+
+    @include mq($from: desktop) {
+        // Increase radius on desktop
+        --R: 6px;
+    }
+
+    // LINE-HEIGHT
+    --LH: 1.2;
+    --LHM: calc(var(--LH) + .2);
+    --LHX: calc(var(--LH) + .4);
+
+    // APP COLORS
+    --C-APP: #fff;
+    --C-APP-ALPHA9: rgb(255, 255, 255, .9);
+    --C-APP-ALPHA8: rgb(255, 255, 255, .9);
+    --C-APP-ALPHA7: rgb(255, 255, 255, .9);
+
+    // GRAY PALETTE
+    --C-G50: #f0f1f3;
+    --C-G100: #e0e2e8;
+    --C-G200: #c1c3ca;
+    --C-G300: #a9acb4;
+    --C-G400: #9699a0;
+    --C-G500: #787a81;
+    --C-G600: #696b71;
+    --C-G700: #53565a;
+    --C-G800: #3b3d40;
+    --C-G900: #202122;
+
+    // BRAND COLORS
+    --C-BRAND: #00d38d;
+    --C-BRAND--DARK:#0db07a;
+    --C-BRAND--LIGHT: #42edb438;
+    --C-BRAND--LIGHTEN: #62e1b738;
+
+    // INBOX LIST COLORS
+    --C-INBOX: #90A4AE;
+    --C-INBOX--LIGHT: #E2E8F0;
+    --C-INBOX--LIGHTEN: #e2e8f07e;
+
+    // OPEN LIST COLORS
+    --C-ALL: #4DD0E1;
+    --C-ALL--LIGHT: #B2EBF2;
+    --C-ALL--LIGHTEN: #b2ebf246;
+
+    // EXPIRED LIST COLORS
+    --C-DUE: #F44336;
+    --C-DUE--LIGHT: #ffcfcf;
+    --C-DUE--LIGHTEN: #feb2b254;
+
+    // SCHEDULED LIST COLORS
+    --C-SCHEDULE: #FFA726;
+    --C-SCHEDULE--LIGHT: #FFE0B2;
+    --C-SCHEDULE--LIGHTEN: #ffe0b27e;
+
+    // DONE LIST COLORS
+    --C-DONE: #26be8b;
+    --C-DONE--LIGHT: #60c6a4;
+    --C-DONE--LIGHTEN: #60c6a425;
+
+    // RECU LIST COLORS
+    --C-RECU: #eec614;
+    --C-RECU--LIGHT: rgb(235, 221, 97)8;
+    --C-RECU--LIGHTEN: #e8d94d2e;
+
+    // TEXT COLORS
+    --TC: #000;
+    --TC--LIGHT: #555;
+    --TC--LIGHTEN: #999;
+
+    // DIVIDER DEFAULT STYLES
+    --DIVIDER: rgba(38, 45, 61, 0.15);
+    --DIVIDER--DARK: rgba(35, 43, 58, 0.3);
+    --DIVIDER--LIGHT: rgba(40, 48, 65, 0.08);
+
+    // GLOBAL TRANSITION SETTINGS (set: "none" to disable)
+    --T: none;
+    --T-O: none;
+
+    @include mq($from: desktop) {
+        // Enable transition on desktop
+        --T: all .165s ease, height 0s, opacity 0s;
+        --T-O: opacity .165s ease;
+    }
+
+    // LAYOUT SETTINGS
+    --APP-H: 75vh; // App height
+    --APP-MH: 55vh; // (Mobile) App height
+    --APP-MIN-H: 750px; // App min height
+    --APP-MAX-H: 800px; // App max height
+    --APP-MAX-MH: 600px; // (Mobile) App max height
+    --APP-W: 100%; // App width
+    --APP-FULLCREEN-MAX-W: 1400px; // Limit width of the fullscreen view
+
+    // SIDEBAR SETTINGS
+    --SIDEBAR-W: 30%; // Desktop width
+    --SIDEBAR-MIN-W: 280px; // Minimal width
+    --SIDEBAR-CW: 68px; // Collapsed width
+}
+
+.lo-light {}
+
+.lo-dark {
+    // APP COLORS
+    --C-APP: #111112;
+    --C-APP-ALPHA9: rgb(25, 26, 27, .9);
+    --C-APP-ALPHA8: rgb(25, 26, 27, .8);
+    --C-APP-ALPHA7: rgb(25, 26, 27, .7);
+
+    // GRAY PALETTE
+    --C-G900: #262628;
+    --C-G800: #292a2b;
+    --C-G700: #8e9092;
+    --C-G600: #696c6e;
+    --C-G500: #606367;
+    --C-G400: #56595f;
+    --C-G300: #3e4044;
+    --C-G200: #3c3f45;
+    --C-G100: #222324;
+    --C-G50: #19191a;
+
+    // BRAND COLORS
+    --C-BRAND: #0fb57e;
+    --C-BRAND--DARK:#15956b;
+    --C-BRAND--LIGHT: #42edb438;
+    --C-BRAND--LIGHTEN: #62e1b722;
+
+    // INBOX LIST COLORS
+    --C-INBOX: #71838c;
+    --C-INBOX--LIGHT: #e2e8f072;
+    --C-INBOX--LIGHTEN: #e2e8f029;
+
+    // OPEN LIST COLORS
+    --C-ALL: #40b6c6;
+    --C-ALL--LIGHT: #b2ebf278;
+    --C-ALL--LIGHTEN: #b2ebf225;
+
+    // EXPIRED LIST COLORS
+    --C-DUE: #d83c31;
+    --C-DUE--LIGHT: #ffcfcf78;
+    --C-DUE--LIGHTEN: #feb2b225;
+
+    // SCHEDULED LIST COLORS
+    --C-SCHEDULE: #d78e22;
+    --C-SCHEDULE--LIGHT: #ffe0b27c;
+    --C-SCHEDULE--LIGHTEN: #ffe0b22e;
+
+    // DONE LIST COLORS
+    --C-DONE: #20a277;
+    --C-DONE--LIGHT: #60c6a47b;
+    --C-DONE--LIGHTEN: #60c6a425;
+
+    // RECU LIST COLORS
+    --C-RECU: #cbaa16;
+    --C-RECU--LIGHT: rgba(235, 221, 97, 0.528)8;
+    --C-RECU--LIGHTEN: #e8d94d2e;
+
+    // TEXT COLORS
+    --TC: #ffffff;
+    --TC--LIGHT: #b3b7bd;
+    --TC--LIGHTEN: #878a8e;
+
+    // DIVIDER DEFAULT STYLES
+    --DIVIDER: rgba(232, 235, 241, 0.1);
+    --DIVIDER--DARK: rgba(227, 231, 241, 0.25);
+    --DIVIDER--LIGHT: rgba(233, 236, 242, 0.05);
+}

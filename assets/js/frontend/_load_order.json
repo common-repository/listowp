@@ -1,0 +1,15 @@
+[
+  "base",
+  "hooks",
+  "autosize",
+  "trim-html",
+  "class-listo-abstract",
+  "class-listo-root",
+  "class-listo-collection-header",
+  "class-listo-new-collection",
+  "class-listo-items",
+  "class-listo-item-due",
+  "class-listo-new-item",
+  "class-listo-sortable",
+  "init"
+]

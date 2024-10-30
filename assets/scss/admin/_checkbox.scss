@@ -1,0 +1,14 @@
+.loa-checkbox {}
+
+.loa-checkbox__control {
+    font-size: 1.6rem;
+    cursor: pointer;
+
+    &.fa-toggle-on {
+        color: var(--C-BRAND--DARK);
+    }
+
+    &.fa-toggle-off {
+        color: var(--C-G500);
+    }
+}

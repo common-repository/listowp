@@ -1,0 +1,536 @@
+//
+// SINGLE LIST
+// ----------------------------------------------------------------
+// List item - wrapping list inner with child elements
+// ----------------------------------------------------------------
+.lo-list {
+    --bg-color: var(--C-INBOX--LIGHT);
+    --bg-color-hover: rgba(54, 74, 87, 0.05);
+    --icon-color: var(--C-INBOX);
+    --icon-color-active: var(--C-INBOX);
+    --shadow-active: var(--C-INBOX);
+    --shadow-active-2: var(--C-INBOX--LIGHTEN);
+
+    position: relative;
+    color: var(--TC);
+    border-top: 1px solid var(--DIVIDER);
+    box-shadow: 0 0 0 1px transparent;
+    transition: var(--T);
+    cursor: pointer;
+
+    .lo-lists--smart & {
+        &:first-child {
+            border-top: none;
+
+            @include mq($from: desktop) {
+                border-top-left-radius: var(--RL);
+            }
+
+            .lo-wrapper--fullscreen & {
+                border-radius: 0;
+            }
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    @include mq($until: desktop) {
+        .lo-lists--smart & {
+            border-top: none;
+            border-radius: var(--R);
+            background-color: var(--bg-color-hover);
+        }
+    }
+
+    @include mq($from: desktop) {
+        --bg-color-hover: rgba(54, 74, 87, 0.025);
+
+        border-top: 1px solid var(--DIVIDER);
+    }
+
+    &:hover {
+        color: var(--TC);
+        background-color: var(--bg-color-hover);
+    }
+
+    &.active {
+        --icon-color: var(--icon-color-active);
+
+        color: var(--TC);
+        background-color: var(--shadow-active-2);
+        box-shadow: 0 0 0 1px var(--shadow-active);
+
+        @include mq($from: desktop) {
+            border-top: 1px solid transparent;
+        }
+    }
+
+    &.lo-droptarget {
+        background-color: lightyellow;
+    }
+
+    &.lo-dragged {
+        background-color: var(--C-APP);
+        opacity: .8;
+        z-index: 100;
+    }
+}
+
+//
+// List inner container - wrapping list name & icon
+// ----------------------------------------------------------------
+.lo-list__inner {
+    display: flex;
+    gap: var(--PXS);
+    padding: var(--PXS);
+
+    .lo-lists--smart &,
+    .lo-lists__add & {
+        align-items: center;
+    }
+
+    @include mq($until: desktop) {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include mq($from: desktop) {
+        min-height: 63px;
+        padding: var(--PXS) var(--PS);
+    }
+}
+
+//
+// List name - wrapping list name & counters
+// ----------------------------------------------------------------
+.lo-list__name {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: calc(var(--PXS) / 4);
+
+    > span {
+        word-break: break-word;
+    }
+
+    @include mq($from: desktop) {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: calc(var(--PXS) / 2);
+    }
+}
+
+//
+// List counter - wrapping current tasks & expired tasks number
+// ----------------------------------------------------------------
+.lo-list__count {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--PXS) / 2);
+    font-size: .8rem;
+    font-weight: normal;
+    opacity: .5;
+
+    .active &,
+    .lo-tasks__header & {
+        opacity: 1;
+    }
+
+    > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: calc(var(--PXS) / 2);
+        height: 1.115rem;
+        padding-left: calc(var(--PXS) / 2);
+        padding-right: calc(var(--PXS) / 2);
+        line-height: 1;
+        color: var(--TC);
+        background-color: var(--bg-color);
+        border-radius: calc(var(--R) / 1.5);
+
+        > i {
+            color: var(--icon-color);
+        }
+    }
+
+    @include mq($until: desktop) {
+        gap: calc(var(--PXS) / 3);
+    }
+}
+
+//
+// List icon - wrapping icon with background
+// ----------------------------------------------------------------
+.lo-list__icon-wrapper {
+    @include mq($from: desktop) {
+        position: relative;
+    }
+}
+
+.lo-list__icon {
+    --size: 34px;
+    --ic: #fff;
+    --bg: var(--icon-color);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--size);
+    min-width: var(--size);
+    height: var(--size);
+    font-size: .925rem;
+    font-style: normal;
+    color: var(--ic);
+    background-color: var(--bg);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0px var(--shadow-active-2);
+    transition: var(--T);
+
+    &.fa-solid,
+    &.fa-regular,
+    &.fa-brand {
+        > span[data-field="initials"] {
+            display: none;
+        }
+    }
+
+    &:before {
+        font-size: 18px;
+    }
+
+    .lo-list:hover & {
+        box-shadow: 0 0 0 4px var(--shadow-active-2), 0 0 0 4px var(--shadow-active-2);
+    }
+
+    .lo-list.active & {
+        box-shadow: 0 0 0 6px var(--shadow-active-2);
+    }
+
+    .lo-list__info-data & {
+        --size: 45px;
+    }
+
+    .lo-list__info-data:not([data-id="inbox"], [data-id="all"], [data-id="due"], [data-id="scheduled"], [data-id="done"], [data-id="recurring"]) & {
+        cursor: pointer;
+
+        &:hover {
+            font-family: "Font Awesome 6 Free";
+
+            span[data-field="initials"] {
+                display: none;
+            }
+
+            &:before {
+                content: "\f303";
+                font-size: .825rem;
+                font-weight: 900;
+            }
+        }
+    }
+
+    @include mq($from: desktop) {
+        --size: 37px;
+
+        &:before {
+            font-size: 20px;
+        }
+
+        .lo-lists--custom & {
+            margin-top: calc(var(--PXS) / 2 - 1px);
+        }
+    }
+}
+
+//
+// Current list info - Wrapping list name and description, renders
+// inside Tasks header container
+// ----------------------------------------------------------------
+.lo-list__info {
+    position: relative;
+    padding: var(--PXS);
+    line-height: var(--LHX);
+
+    @include mq($from: desktop) {
+        display: flex;
+        align-items: center;
+        min-height: 127px;
+        padding: var(--PS) calc(var(--PS) + var(--PXS));
+    }
+
+    &:hover {
+        & .lo-list__info-title {
+            gap: var(--PXS);
+        }
+    }
+}
+
+.lo-list__info-data {
+    --bg-color: var(--C-INBOX--LIGHT);
+    --icon-color: var(--C-INBOX);
+    --icon-color-active: var(--C-INBOX);
+    --shadow-active: var(--C-INBOX);
+    --shadow-active-2: var(--C-INBOX--LIGHTEN);
+
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.lo-list__info-header {
+    display: flex;
+    gap: var(--PXS);
+}
+
+.lo-list__info-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+//
+// Current list title
+// ----------------------------------------------------------------
+.lo-list__info-title {
+    --icon-color: var(--C-INBOX);
+    --icon-color-active: var(--C-INBOX);
+    --shadow-active: var(--C-INBOX);
+    --shadow-active-2: var(--C-INBOX--LIGHTEN);
+
+    display: inline-flex;
+    align-items: center;
+    gap: var(--PXS);
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: var(--TC);
+    transition: var(--T);
+
+    &:hover {
+        .lo-list__icon {
+            cursor: pointer;
+            box-shadow: 0 0 0 4px var(--shadow-active-2), 0 0 0 4px var(--shadow-active-2);
+        }
+    }
+
+    .lo-wrapper--fullscreen & {
+        padding-right: var(--PS);
+    }
+}
+
+//
+// Current list description
+// ----------------------------------------------------------------
+.lo-list__info-desc {
+    color: var(--TC--LIGHT);
+    height: calc(var(--LHX) * 1em);
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    overflow: hidden;
+    transition: var(--T);
+
+    &:empty {
+        opacity: .5;
+
+        &:before {
+            content: attr(data-placeholder);
+        }
+    }
+}
+
+.lo-list__info-count {
+    // TODO: separate styles from .lo-list__count
+    --bg-color: var(--C-INBOX--LIGHT);
+    --bg-color-hover: rgba(54, 74, 87, 0.025);
+    --icon-color: var(--C-INBOX);
+    --icon-color-active: var(--C-INBOX);
+    --shadow-active: var(--C-INBOX);
+    --shadow-active-2: var(--C-INBOX--LIGHTEN);
+
+    padding-top: var(--PXS);
+    font-size: .925rem;
+
+    > span {
+        &:nth-child(2) {
+            --bg-color: var(--C-DONE--LIGHT);
+            --icon-color: var(--C-DONE);
+            --icon-color-active: var(--C-DONE);
+        }
+        &:nth-child(3) {
+            --bg-color: var(--C-DUE--LIGHT);
+            --icon-color: var(--C-DUE);
+            --icon-color-active: var(--C-DUE);
+        }
+    }
+}
+
+//
+// "Inbox" list class modifier
+// ----------------------------------------------------------------
+.lo-list--inbox,
+.lo-list[data-id="inbox"],
+.lo-list__info-data[data-id="inbox"] {
+    --bg-color: var(--C-INBOX--LIGHT);
+    --icon-color: var(--C-INBOX);
+    --icon-color-active: var(--C-INBOX);
+    --shadow-active: var(--C-INBOX);
+    --shadow-active-2: var(--C-INBOX--LIGHTEN);
+}
+
+//
+// "Open" list class modifier
+// ----------------------------------------------------------------
+.lo-list--all,
+.lo-list[data-id="all"],
+.lo-list__info-data[data-id="all"] {
+    --bg-color: var(--C-ALL--LIGHT);
+    --icon-color: var(--C-ALL);
+    --icon-color-active: var(--C-ALL);
+    --shadow-active: var(--C-ALL);
+    --shadow-active-2: var(--C-ALL--LIGHTEN);
+}
+
+//
+// "Expired" list class modifier
+// ----------------------------------------------------------------
+.lo-list[data-id="due"],
+.lo-list__info-data[data-id="due"] {
+    --bg-color: var(--C-DUE--LIGHT);
+    --icon-color: var(--C-DUE);
+    --icon-color-active: var(--C-DUE);
+    --shadow-active: var(--C-DUE);
+    --shadow-active-2: var(--C-DUE--LIGHTEN);
+}
+
+//
+// List class modifier for lists with expired items
+// ----------------------------------------------------------------
+.lo-list--due {
+    .lo-list__count {
+        > span {
+            &:nth-child(2) {
+                --bg-color: var(--C-DUE--LIGHT);
+                --icon-color: var(--C-DUE);
+                --icon-color-active: var(--C-DUE);
+            }
+        }
+    }
+}
+
+//
+// "Scheduled" list class modifier
+// ----------------------------------------------------------------
+.lo-list--scheduled,
+.lo-list[data-id="scheduled"],
+.lo-list__info-data[data-id="scheduled"] {
+    --bg-color: var(--C-SCHEDULE--LIGHT);
+    --icon-color: var(--C-SCHEDULE);
+    --icon-color-active: var(--C-SCHEDULE);
+    --shadow-active: var(--C-SCHEDULE);
+    --shadow-active-2: var(--C-SCHEDULE--LIGHTEN);
+}
+
+//
+// "Done" list class modifier
+// ----------------------------------------------------------------
+.lo-list--done,
+.lo-list[data-id="done"],
+.lo-list__info-data[data-id="done"] {
+    --bg-color: var(--C-DONE--LIGHT);
+    --icon-color: var(--C-DONE);
+    --icon-color-active: var(--C-DONE);
+    --shadow-active: var(--C-DONE);
+    --shadow-active-2: var(--C-DONE--LIGHTEN);
+}
+
+//
+// "Recurring" list class modifier
+// ----------------------------------------------------------------
+.lo-list--recurring,
+.lo-list[data-id="recurring"],
+.lo-list__info-data[data-id="recurring"] {
+    --bg-color: var(--C-RECU--LIGHT);
+    --icon-color: var(--C-RECU);
+    --icon-color-active: var(--C-RECU);
+    --shadow-active: var(--C-RECU);
+    --shadow-active-2: var(--C-RECU--LIGHTEN);
+}
+
+
+
+// TEMP TEST
+.lo-list__count {
+    gap: var(--PXS);
+
+    > span {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+
+        &:nth-child(2) {
+            --bg-color: var(--C-DONE--LIGHT);
+            --icon-color: var(--C-DONE);
+            --icon-color-active: var(--C-DONE);
+
+            .lo-list--due & {
+                --bg-color: var(--C-DONE--LIGHT);
+                --icon-color: var(--C-DONE);
+                --icon-color-active: var(--C-DONE);
+            }
+        }
+    }
+}
+
+.lo-list__icon-count {
+    position: absolute;
+    top: -3px;
+    right: -8px;
+    background: #f44336;
+    border: 2px solid var(--C-APP);
+    font-weight: bold;
+    padding: 0 2px;
+    min-width: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: .6rem;
+    line-height: 1;
+    font-weight: 400;
+    border-radius: 10px;
+    display: flex;
+    height: 18px;
+    align-items: center;
+    justify-content: center;
+
+    .active & {
+        border-color: var(--bg-color);
+    }
+}
+
+.lo-list__edit {
+    --color: var(--TC--LIGHTEN);
+    --color-hover: var(--TC);
+
+    font-size: .825rem;
+    transition: var(--T), var(--T-O);
+    cursor: pointer;
+
+    @include mq($until: desktop) {
+        position: relative;
+        margin-left: auto;
+
+        &:before {
+            content: " ";
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            border: none;
+            pointer-events: all;
+        }
+    }
+}

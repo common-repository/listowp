@@ -1,0 +1,101 @@
+//
+// WRAPPER
+// ----------------------------------------------------------------
+// Wrapping sidebar and main column
+// ----------------------------------------------------------------
+// Min-height is defined to make sure app looks good when content
+// is not loaded yet
+// ----------------------------------------------------------------
+// Max-height is set to 75% of viewport height but limited to 800px
+// ----------------------------------------------------------------
+.lo-wrapper {
+    --w: var(--APP-W);
+    --h: var(--APP-H);
+    --min-h: var(--APP-MIN-H);
+    --max-h: var(--APP-MAX-H);
+
+    position: relative;
+    display: flex;
+    width: var(--w);
+    min-height: var(--min-h);
+    max-height: max(var(--h), var(--max-h));
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq($until: desktop) {
+        --h: var(--APP-MH);
+        --max-h: var(--APP-MAX-MH);
+    }
+}
+
+.lo-wrapper__toggle {
+    --bg: transparent;
+    --bg-hover: transparent;
+    --color: var(--TC--LIGHTEN);
+    --color-hover: var(--TC);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+
+    .lo-wrapper--fullscreen & {
+        > i {
+            &:before {
+                content: "\f422";
+            }
+        }
+    }
+
+    @include mq($until: desktop) {
+        border: 1px solid var(--C-G100);
+        border-radius: 50%;
+    }
+
+    @include mq($from: desktop) {
+        position: absolute;
+        z-index: 100;
+        top: 1px;
+        right: 28px;
+
+        .lo-wrapper--fullscreen & {
+            top: 1px;
+            right: 28px;
+        }
+    }
+}
+
+.lo-wrapper--fullscreen {
+    --w: 100%;
+    --h: 100%;
+    --min-h: 100%;
+    --max-h: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    max-width: var(--APP-FULLCREEN-MAX-W);
+
+    &:before {
+        content: " ";
+
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        background-color: var(--C-G900);
+        opacity: .95;
+    }
+}
+
+// TEMPORARY - since 1.0.3
+.logged-in.listowp-login.wp-block-loginout {
+    display: none;
+}

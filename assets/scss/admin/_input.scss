@@ -1,0 +1,17 @@
+.loa-input {
+    --input-bg: transparent;
+    --input-b: 1px solid var(--C-G300);
+    --input-sh: none;
+    --input-p: 0 var(--PXS);
+
+    height: 2.25rem;
+
+    &:focus {
+        --input-b: 1px solid var(--C-BRAND);
+        --input-sh: 0 0 0 4px var(--C-BRAND--LIGHTEN);
+    }
+}
+
+.loa-input--full {
+    width: 100%;
+}

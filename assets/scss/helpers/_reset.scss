@@ -1,0 +1,134 @@
+//
+// RESET CSS
+// ----------------------------------------------------------------
+// Resets html elements inside ListoWP wrapper to avoid override
+// issues
+// ----------------------------------------------------------------
+.lo-listowp,
+.loa-wrapper {
+    --input-bg: transparent;
+    --input-b: none;
+    --input-sh: none;
+    --input-p: 0;
+
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #fcfcfc;
+
+    * {
+        box-sizing: inherit;
+        scrollbar-width: thin;
+        scrollbar-color: #ccc #fcfcfc;
+    }
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: var(--TC);
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea,
+    select {
+        width: 100%;
+        margin: 0;
+        padding: var(--input-p);
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--TC);
+        background-color: var(--input-bg);
+        border: var(--input-b);
+        border-radius: var(--R);
+        box-shadow: var(--input-sh);
+        outline: none;
+
+        &:hover,
+        &:focus {
+            color: var(--TC);
+            background-color: var(--input-bg);
+            border: var(--input-b);
+            border-radius: var(--R);
+            box-shadow: var(--input-sh);
+            outline: none;
+        }
+
+        &:disabled {
+            background-color: var(--input-bg);
+            border: var(--input-b);
+            border-radius: var(--R);
+            box-shadow: var(--input-sh);
+            outline: none;
+            opacity: .65;
+        }
+    }
+
+    select {
+        cursor: pointer;
+    }
+
+    input.lo-input,
+    textarea.lo-input {
+        padding-top: var(--PXS);
+        padding-bottom: var(--PXS);
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.lo-timezone {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--PXS) / 2);
+    padding: calc(var(--PXS) / 2) var(--PXS);
+    background-color: var(--DIVIDER--LIGHT);
+    border-radius: var(--RL);
+    position: relative;
+
+    i {
+        display: none;
+        color: var(--TC--LIGHTEN);
+        position: absolute;
+        right: var(--PXS);
+    }
+
+    select {
+        font-size: .8rem;
+
+        &.loading,
+        &.success {
+            ~ i {
+                z-index: 5;
+                background-color: var(--C-G50);
+            }
+        }
+
+        &.loading ~ i.fa-circle-notch {
+            display: block;
+        }
+
+        &.success ~ i.fa-check {
+            display: block;
+            color: var(--C-BRAND);
+        }
+    }
+}
+
+.lo-gdpr {
+    > a {
+        display: block;
+    }
+}
+
+.lo-poweredby {
+    position: absolute;
+    z-index: 5;
+    right: var(--PXS);
+    bottom: var(--PXS);
+    font-size: .825rem;
+    color: var(--TC--LIGHTEN);
+}

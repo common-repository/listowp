@@ -1,0 +1,332 @@
+//
+// TASKS
+// ----------------------------------------------------------------
+// Wrapping all tasks assigned to specific list
+// ----------------------------------------------------------------
+.lo-tasks {
+    --mobile-padd: 0;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--mobile-padd);
+    padding-bottom: 50px;
+    overflow: auto;
+
+    @include mq($from: desktop) {
+        padding: var(--PXS);
+        padding-bottom: 50px;
+        gap: var(--PXS);
+    }
+}
+
+//
+// Tasks header - wrapping list name and description
+// ----------------------------------------------------------------
+.lo-tasks__header {
+    position: relative;
+    background-color: var(--C-APP);
+    border-bottom: 1px solid var(--DIVIDER);
+
+    @include mq($from: desktop) {
+        border-top-right-radius: var(--RC);
+    }
+}
+
+.lo-tasks__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--PXS);
+    color: var(--TC--LIGHT);
+}
+
+.lo-tasks__delete {
+    --size: 2.35rem;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--PXS);
+    min-width: var(--size);
+    height: var(--size);
+    margin-right: auto;
+    padding-left: calc(var(--PXS) / 2);
+    padding-right: calc(var(--PXS) / 2);
+    font-size: 1rem;
+    background-color: var(--C-APP);
+    border: 1px solid var(--C-G200);
+    border-radius: var(--R);
+    transition: var(--T);
+
+    button,
+    span {
+        --color: var(--TC--LIGHT);
+        --color-hover: var(--C-DUE);
+
+        color: var(--TC--LIGHT);
+        transition: var(--T);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--TC);
+        }
+    }
+
+    &:hover {
+        background-color: var(--C-DUE--LIGHTEN);
+        border: 1px solid var(--C-DUE--LIGHT);
+
+        button,
+        span {
+            color: var(--C-DUE);
+        }
+    }
+
+    @include mq($until: desktop) {
+        background-color: var(--C-DUE--LIGHTEN);
+        border: 1px solid var(--C-DUE--LIGHT);
+
+        button,
+        span {
+            color: var(--C-DUE);
+        }
+    }
+}
+
+.lo-tasks__delete-toggle {
+    > span,
+    > div {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: block;
+        width: var(--size);
+        height: var(--size);
+        border-radius: var(--R);
+    }
+}
+
+.lo-tasks__delete-opt {
+    display: flex;
+    align-items: center;
+    gap: var(--PXS);
+    padding-left: var(--PXS);
+
+    a,
+    span {
+        font-weight: 500;
+    }
+}
+
+.lo-tasks__delete-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(var(--size) - var(--PXS));
+
+    > span,
+    > div {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: var(--size);
+        height: var(--size);
+        border-radius: var(--R);
+        transition: var(--T);
+    }
+
+    &:hover {
+        > span,
+        > div {
+            background-color: var(--C-DUE--LIGHTEN);
+        }
+    }
+
+    @include mq($until: desktop) {
+        > span,
+        > div {
+            background-color: var(--C-DUE--LIGHTEN);
+        }
+    }
+}
+
+//
+// Tasks form - wrapping new task form
+// ----------------------------------------------------------------
+.lo-tasks__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--PS);
+}
+
+//
+// Add task button
+// ----------------------------------------------------------------
+.lo-tasks__add-wrapper {
+    border-bottom: 1px solid var(--C-G100);
+}
+
+.lo-tasks__add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--PXS);
+    padding: var(--PS);
+    font-weight: 500;
+    color: var(--TC);
+    background-color: var(--C-APP);
+
+    i {
+        color: var(--C-BRAND);
+    }
+ 
+    @include mq($from: desktop) {
+        color: var(--TC--LIGHT);
+        background-color: var(--C-APP);
+        transition: var(--T);
+        cursor: pointer;
+    
+        i {
+            color: var(--C-G400);
+            transition: var(--T);
+        }
+    
+        &:hover {
+            color: var(--TC);
+    
+            i {
+                color: var(--C-BRAND);
+            }
+        }
+    }
+}
+
+//
+// New task form - wrapping input and action buttons
+// ----------------------------------------------------------------
+.lo-tasks__add-form {
+    display: flex;
+    align-items: center;
+    padding: var(--PXS);
+    border-top: 1px dashed var(--DIVIDER);
+
+    @include mq($from: desktop) {
+        padding: var(--PXS) var(--P);
+    }
+}
+
+//
+// New task actions - wrapping "Add & New" and "Add" buttons
+// ----------------------------------------------------------------
+.lo-tasks__add-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+//
+// New task actions - single button class
+// ----------------------------------------------------------------
+.lo-tasks__add-form-action {
+    --size: 34px;
+    --font-size: 1.35rem;
+    --bg: transparent;
+    --bg-hover: transparent;
+    --color: var(--TC--LIGHT);
+    --color-hover: var(--TC--LIGHT);
+
+    position: relative;
+    padding: var(--PXS);
+    font-size: var(--font-size);
+
+    > i {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:last-child {
+        --color: var(--C-BRAND);
+        --color-hover: var(--C-BRAND);
+
+        padding-right: 0;
+    }
+
+    &:hover {}
+
+    &:disabled {
+        --color: var(--TC--LIGHTEN);
+        --color-hover: var(--TC--LIGHTEN);
+
+        &:hover {}
+    }
+}
+
+// edit
+.lo-tasks__edit {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--PXS);
+}
+
+.lo-tasks__edit-form {
+    display: flex;
+    flex-direction: column;
+
+    input.lo-input,
+    textarea.lo-input {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-weight: 400;
+        transition: none;
+
+        &:first-child {
+            font-size: 1.2rem;
+        }
+
+        &:focus {
+            background-color: var(--C-G50);
+            box-shadow: -2px 0 0 var(--C-G50), 2px 0 0 var(--C-G50);
+        }
+    }
+}
+
+.lo-tasks__edit-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: calc(var(--PXS) / 2);
+}
+
+// empty
+.lo-tasks__empty {
+    display: flex;
+    align-items: center;
+    gap: var(--PXS);
+    padding: var(--PXS) calc(var(--PS) - 2px);
+    font-size: 1rem;
+    color: var(--C-G500);
+    border: 2px dashed var(--C-G300);
+    border-radius: var(--R);
+
+    > i {
+        color: var(--C-G400);
+    }
+}
+
+// loading
+.lo-tasks__loading {
+    display: block;
+    text-align: center;
+    padding: var(--PXS) calc(var(--PS) - 2px);
+    color: var(--C-G500);
+
+    > i {
+        color: var(--C-G400);
+    }
+}

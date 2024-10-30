@@ -1,0 +1,671 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ListoWP\n"
+"POT-Creation-Date: 2023-05-29 10:01-0500\n"
+"PO-Revision-Date: 2023-06-02 14:13\n"
+"Last-Translator: \n"
+"Language-Team: Italian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: listo_plugin.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Crowdin-Project: ListoWP\n"
+"X-Crowdin-Project-ID: 568977\n"
+"X-Crowdin-Language: it\n"
+"X-Crowdin-File: listowp.pot\n"
+"X-Crowdin-File-ID: 23\n"
+"Language: it_IT\n"
+
+#: assets/js/block-editor.js:7 assets/js/block-editor.js:10
+msgid "ListoWP"
+msgstr "ListoWP"
+
+#: assets/js/block-editor.js:10 classes/models/collections.php:18
+#: classes/models/collections.php:98 classes/models/collections.php:113
+msgid "List"
+msgstr "Lista"
+
+#: classes/config/config.php:32 templates/root.php:53 templates/root.php:56
+msgid "Lists"
+msgstr "Liste"
+
+#: classes/config/config.php:34
+msgctxt "admin"
+msgid "Configure smart lists for all users"
+msgstr "Configura liste intelligenti per tutti gli utenti"
+
+#: classes/config/config.php:62
+msgctxt "admin"
+msgid "Appearance"
+msgstr "Aspetto"
+
+#: classes/config/config.php:67
+msgctxt "admin"
+msgid "Style"
+msgstr "Stile"
+
+#: classes/config/config.php:68
+msgctxt "admin"
+msgid "Default color scheme"
+msgstr "Schema colori predefinito"
+
+#: classes/config/config.php:68
+msgctxt "Application color scheme"
+msgid "Light"
+msgstr "Chiaro"
+
+#: classes/config/config.php:68
+msgctxt "Application color scheme"
+msgid "Dark"
+msgstr "Scuro"
+
+#: classes/config/config.php:71
+msgctxt "admin"
+msgid "Powered by ListoWP"
+msgstr "Offerto da ListoWP"
+
+#: classes/config/config.php:78
+msgctxt "admin"
+msgid "Date & Time"
+msgstr "Data e Ora"
+
+#: classes/config/config.php:82
+msgctxt "admin"
+msgid "Date format"
+msgstr "Formato data"
+
+#: classes/config/config.php:83
+msgctxt "admin"
+msgid "Short"
+msgstr "Breve"
+
+#: classes/config/config.php:84
+msgctxt "admin"
+msgid "Long"
+msgstr "Lungo"
+
+#: classes/config/config.php:90
+msgctxt "admin"
+msgid "Integrations"
+msgstr "Integrazioni"
+
+#: classes/config/config.php:113
+#: classes/pro/integrations/peepso/peepso-admin.php:60
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: classes/config/config.php:117
+msgctxt "admin"
+msgid "Bulk export & delete (GDPR)"
+msgstr "Esportazione ed eliminazione in blocco (GDPR)"
+
+#: classes/config/config.php:118
+msgctxt "admin"
+msgid "Debug log"
+msgstr "Log di debug"
+
+#: classes/config/config_license.php:32
+msgctxt "admin"
+msgid "Deactivate"
+msgstr "Disattiva"
+
+#: classes/config/config_license.php:38
+msgctxt "admin"
+msgid "Activate"
+msgstr "Attiva"
+
+#: classes/config/config_license.php:134
+#: classes/config/config_license.php:204
+msgctxt "admin"
+msgid "Invalid license"
+msgstr "Licenza non valida"
+
+#: classes/config/config_license.php:176
+#: classes/config/config_license.php:222
+#: classes/config/config_license.php:297
+msgctxt "admin"
+msgid "An error occurred, please try again"
+msgstr "Si è verificato un errore, riprova"
+
+#. translators: the license key expiration date
+#: classes/config/config_license.php:193
+#, php-format
+msgctxt "admin"
+msgid "Your license key expired on %s"
+msgstr "Il tuo codice di licenza è scaduto il giorno %s"
+
+#: classes/config/config_license.php:200
+msgctxt "admin"
+msgid "Your license key has been disabled"
+msgstr "Il tuo codice di licenza è stato disabilitato"
+
+#: classes/config/config_license.php:209
+msgctxt "admin"
+msgid "Your license is not active for this URL"
+msgstr "La tua licenza non è attivata per questo URL"
+
+#. translators: the plugin name
+#: classes/config/config_license.php:214
+#, php-format
+msgctxt "admin"
+msgid "This appears to be an invalid license key for %s"
+msgstr "Il codice di licenza non risulta valido per %s"
+
+#: classes/config/config_license.php:218
+msgctxt "admin"
+msgid "Your license key has reached its activation limit"
+msgstr "Il codice di licenza ha raggiunto il limite di attivazione prefissato"
+
+#: classes/config/config_panel.php:21 classes/config/plugins_list.php:25
+msgctxt "admin"
+msgid "Configuration"
+msgstr "Configurazione"
+
+#: classes/config/config_panel.php:28 classes/config/config_panel.php:217
+#: classes/config/plugins_list.php:32
+msgctxt "admin"
+msgid "Upgrade to Pro!"
+msgstr "Aggiorna a Pro!"
+
+#: classes/config/config_panel.php:36
+msgctxt "admin"
+msgid "License"
+msgstr "Licenza"
+
+#: classes/config/config_panel.php:115 classes/config/config_panel.php:123
+#: classes/pro/integrations/peepso/peepso-admin.php:52
+msgid "Enabled"
+msgstr "Abilitato"
+
+#: classes/config/config_panel.php:139
+#: classes/pro/integrations/peepso/peepso-admin.php:74
+msgctxt "admin"
+msgid "Slug"
+msgstr "Slug"
+
+#: classes/config/config_panel.php:147
+#: classes/pro/integrations/peepso/peepso-admin.php:67
+msgctxt "admin"
+msgid "Label"
+msgstr "Etichetta"
+
+#: classes/config/config_panel.php:153
+msgctxt "admin"
+msgid "Position"
+msgstr "Posizione"
+
+#: classes/config/config_panel.php:202
+msgctxt "admin"
+msgid "Requires the plugin \"Community by PeepSo\""
+msgstr "Richiede il plugin \"Community by PeepSo\""
+
+#: classes/config/config_panel.php:203
+#, php-format
+msgctxt "admin"
+msgid "You can manage the PeepSo integration %s"
+msgstr "Puoi gestire l'integrazione PeepSo %s"
+
+#: classes/config/config_panel.php:203
+msgctxt "admin"
+msgid "here"
+msgstr "qui"
+
+#: classes/config/config_panel.php:204
+msgid "Inbox cannot be disabled"
+msgstr "Impossibile disabilitare In entrata"
+
+#: classes/config/config_panel.php:205
+msgctxt "admin"
+msgid "Users will be able to bulk export and delete their lists and tasks in accordance to the privacy laws such as GDPR"
+msgstr "Gli utenti avranno la facoltà di esportare ed eliminare in blocco le proprie liste e attività in conformità con il GDPR e altre leggi sulla privacy"
+
+#: classes/config/config_panel.php:206
+msgctxt "admin"
+msgid "Used only for debugging, recommended to keep disabled"
+msgstr "Solo a scopo di debug, si consiglia di mantene disabilitato"
+
+#: classes/config/config_panel.php:207
+msgctxt "admin"
+msgid "Used on Tasks due this year"
+msgstr "Utilizzato nelle attività in scadenza quest'anno"
+
+#: classes/config/config_panel.php:208
+msgctxt "admin"
+msgid "Used on Tasks due any other year"
+msgstr "Utilizzato nelle attività in scadenza in qualsiasi anno escluso questo"
+
+#: classes/config/config_panel.php:216
+msgctxt "admin"
+msgid "Not configurable in the free version."
+msgstr "Non configurabile nella versione gratuita."
+
+#: classes/config/config_panel.php:234
+#: classes/pro/integrations/peepso/peepso-admin.php:71
+#: classes/pro/integrations/peepso/peepso-admin.php:78
+msgctxt "admin"
+msgid "Leave empty for the default value"
+msgstr "Lascia vuoto per valore predefinito"
+
+#: classes/frontend/assets.php:126
+msgid "OK"
+msgstr "OK"
+
+#: classes/frontend/assets.php:127
+msgid "Submit"
+msgstr "Invia"
+
+#: classes/frontend/assets.php:128 templates/admin/config_item_select.php:22
+#: templates/admin/config_item_text.php:18 templates/collection_header.php:54
+#: templates/collection_header.php:58 templates/collection_header.php:71
+#: templates/item.php:34 templates/item.php:39 templates/root.php:35
+msgid "Cancel"
+msgstr "Annulla"
+
+#: classes/frontend/assets.php:129
+msgid "Popup"
+msgstr "Popup"
+
+#: classes/frontend/assets.php:131
+msgid "This action will completely delete all your lists and tasks! Are you sure want to proceed?"
+msgstr "Questa azione eliminerà completamente tutte le tue liste e attività! Vuoi procedere?"
+
+#: classes/models/collection.php:96
+msgid "All due tasks"
+msgstr "Tutte le attività scadute"
+
+#: classes/models/collection.php:104
+msgid "All tasks with a due date"
+msgstr "Tutte le attività con scadenza"
+
+#: classes/models/collection.php:112
+msgid "All uncompleted tasks"
+msgstr "Tutte le attività incomplete"
+
+#: classes/models/collection.php:120
+msgid "All completed tasks"
+msgstr "Tutte le attività completate"
+
+#: classes/models/collection.php:128
+msgid "Tasks not assigned to a list"
+msgstr "Attività non assegnate a una lista"
+
+#: classes/models/collection.php:136
+msgid "All repeating tasks"
+msgstr "Tutte le attività ricorrenti"
+
+#: classes/models/collections.php:24
+msgctxt "Tasks type/state"
+msgid "Expired"
+msgstr "Scadute"
+
+#: classes/models/collections.php:25
+msgctxt "Tasks type/state"
+msgid "Scheduled"
+msgstr "Programmate"
+
+#: classes/models/collections.php:26
+msgctxt "Tasks type/state"
+msgid "Recurring"
+msgstr "Ricorrenti"
+
+#: classes/models/collections.php:27
+msgctxt "Tasks type/state"
+msgid "To Do"
+msgstr "Da fare"
+
+#: classes/models/collections.php:28
+msgctxt "Tasks type/state"
+msgid "Inbox"
+msgstr "In entrata"
+
+#: classes/models/collections.php:29
+msgctxt "Tasks type/state"
+msgid "Done"
+msgstr "Completate"
+
+#. translators: the plugin name.
+#: classes/pro/edd/edd_updater.php:253
+#, php-format
+msgctxt "admin"
+msgid "There is a new version of %1$s available"
+msgstr "È disponibile una nuova versione di %1$s"
+
+#: classes/pro/edd/edd_updater.php:259
+msgctxt "admin"
+msgid "Contact your network administrator to install the update"
+msgstr "Contatta l'amministratore di rete per installare l'aggiornamento"
+
+#. translators: 1. opening anchor tag, do not translate 2. the new plugin version 3. closing anchor tag, do not translate.
+#: classes/pro/edd/edd_updater.php:264
+#, php-format
+msgctxt "admin"
+msgid "%1$sView version %2$s details%3$s"
+msgstr "%1$sVisualizza ulteriori dettagli sulla versione %2$s%3$s"
+
+#: classes/pro/edd/edd_updater.php:272
+#, php-format
+msgctxt "admin"
+msgid "%1$sView version %2$s details%3$s or %4$supdate now%5$s"
+msgstr "%1$sVisualizza ulteriori dettagli sulla versione %2$s%3$s oppure %4$saggiorna ora%5$s"
+
+#: classes/pro/edd/edd_updater.php:283
+msgctxt "admin"
+msgid "Update now"
+msgstr "Aggiorna ora"
+
+#: classes/pro/edd/edd_updater.php:515
+msgctxt "admin"
+msgid "You do not have permission to install plugin updates"
+msgstr "Non hai i permessi necessari per installare aggiornamenti del plugin"
+
+#: classes/pro/edd/edd_updater.php:515
+msgctxt "admin"
+msgid "Error"
+msgstr "Errore"
+
+#: classes/pro/integrations/buddyboss/buddyboss-profile.php:9
+#: classes/pro/integrations/woocommerce/woocommerce.php:56
+#: templates/preferences.php:10 templates/root.php:54
+msgid "Tasks"
+msgstr "Attività"
+
+#: classes/pro/integrations/buddyboss/buddyboss-profile.php:10
+msgid "tasks"
+msgstr "attività"
+
+#: classes/pro/integrations/peepso/peepso-admin.php:49
+msgctxt "admin"
+msgid "Show \"Tasks\" tab in user profiles"
+msgstr "Mostra la scheda \"Attività\" nei profili utente"
+
+#: classes/pro/integrations/peepso/peepso-admin.php:49
+msgctxt "admin"
+msgid "accessible only to profile owner"
+msgstr "accessibile solo al proprietario del profilo"
+
+#: classes/pro/integrations/peepso/peepso-admin.php:64
+msgid "Leave empty for the default value"
+msgstr "Lascia vuoto per valore predefinito"
+
+#: classes/pro/integrations/peepso/peepso-admin.php:78
+msgctxt "admin"
+msgid "FontAwesome (or similar)"
+msgstr "FontAwesome (o simile)"
+
+#: classes/pro/integrations/peepso/peepso-admin.php:81
+msgctxt "admin"
+msgid "Icon CSS class"
+msgstr "Classe icona CSS"
+
+#: classes/pro/integrations/peepso/peepso-admin.php:88
+msgctxt "admin"
+msgid "Profiles"
+msgstr "Profili"
+
+#: classes/pro/new_strings/new_strings.php:7
+msgid "Change icon"
+msgstr "Cambia icona"
+
+#: classes/pro/new_strings/new_strings.php:8
+#: templates/collection_custom_icon.php:11
+msgid "Search"
+msgstr "Cerca"
+
+#: classes/pro/recurring/recurring.php:113
+msgid "Does not repeat"
+msgstr "Nessuna ripetizione"
+
+#: classes/pro/recurring/recurring.php:118
+msgid "Daily"
+msgstr "Quotidiano"
+
+#: classes/pro/recurring/recurring.php:123
+msgid "Weekly"
+msgstr "Settimanale"
+
+#: classes/pro/recurring/recurring.php:128
+msgid "Biweekly"
+msgstr "Bisettimanale"
+
+#: classes/pro/recurring/recurring.php:133
+msgid "Monthly"
+msgstr "Mensile"
+
+#: classes/pro/recurring/recurring.php:138
+msgid "Yearly"
+msgstr "Annuale"
+
+#: classes/utilities/string.php:26
+msgctxt "Short for thousands"
+msgid "k"
+msgstr "mila"
+
+#: classes/utilities/string.php:29
+msgctxt "Short for millions"
+msgid "m"
+msgstr "mln"
+
+#: templates/admin/config_item_select.php:26
+#: templates/admin/config_item_text.php:22 templates/collection_header.php:59
+#: templates/item.php:40 templates/item_due_popup.php:113
+msgid "Save"
+msgstr "Salva"
+
+#: templates/collection_custom_icon.php:15
+msgid "Remove icon"
+msgstr "Elimina icona"
+
+#: templates/collection_header.php:11 templates/item.php:16
+msgid "No description"
+msgstr "Nessuna descrizione"
+
+#: templates/collection_header.php:15
+msgid "Open tasks"
+msgstr "Attività aperte"
+
+#: templates/collection_header.php:19
+msgid "Done tasks"
+msgstr "Attività completate"
+
+#: templates/collection_header.php:23
+msgid "Due tasks"
+msgstr "Attività scadute"
+
+#: templates/collection_header.php:28
+msgid "Show full description"
+msgstr "Mostra descrizione completa"
+
+#: templates/collection_header.php:29
+msgid "Hide full description"
+msgstr "Nascondi descrizione completa"
+
+#: templates/collection_header.php:32 templates/item.php:68
+msgid "Edit"
+msgstr "Modifica"
+
+#: templates/collection_header.php:40 templates/item.php:21
+#: templates/root.php:33
+msgid "List name"
+msgstr "Nome lista"
+
+#: templates/collection_header.php:42 templates/item.php:22
+msgid "Description"
+msgstr "Descrizione"
+
+#: templates/collection_header.php:47
+msgid "Delete list and tasks"
+msgstr "Elimina lista e attività"
+
+#: templates/collection_header.php:50 templates/item.php:30
+msgid "Delete"
+msgstr "Elimina"
+
+#: templates/collection_header.php:68
+msgid "Task title"
+msgstr "Titolo attività"
+
+#: templates/collection_header.php:75 templates/root.php:36
+msgid "Add"
+msgstr "Aggiungi"
+
+#: templates/item.php:27
+msgid "Confirm"
+msgstr "Conferma"
+
+#: templates/item.php:61
+msgid "Show details"
+msgstr "Mostra dettagli"
+
+#: templates/item.php:62
+msgid "Hide details"
+msgstr "Nascondi dettagli"
+
+#: templates/item_due.php:18
+msgid "No due date"
+msgstr "Nessuna data di scadenza"
+
+#: templates/item_due_popup.php:20
+msgid "Date"
+msgstr "Data"
+
+#: templates/item_due_popup.php:26
+msgid "Select date"
+msgstr "Seleziona data"
+
+#: templates/item_due_popup.php:44 templates/item_due_popup.php:74
+msgid "Time"
+msgstr "Ora"
+
+#: templates/item_due_popup.php:99
+msgid "am"
+msgstr "AM"
+
+#: templates/item_due_popup.php:100
+msgid "pm"
+msgstr "PM"
+
+#: templates/item_due_popup.php:110
+msgid "Clear"
+msgstr "Cancella"
+
+#: templates/item_list_empty.php:1
+msgid "No tasks here"
+msgstr "Nessuna attività"
+
+#: templates/new_collection.php:2 templates/root.php:42
+msgid "New list"
+msgstr "Nuova lista"
+
+#: templates/new_item.php:2 templates/root.php:73
+msgid "New task"
+msgstr "Nuova attività"
+
+#: templates/preferences.php:2
+msgctxt "Button to close window etc"
+msgid "Close"
+msgstr "Chiudi"
+
+#: templates/preferences.php:5 templates/root.php:65
+msgid "Preferences"
+msgstr "Preferenze"
+
+#: templates/preferences.php:13
+msgid "Default order"
+msgstr "Ordinamento predefinito"
+
+#: templates/preferences.php:18
+msgid "Manual"
+msgstr "Manuale"
+
+#: templates/preferences.php:19
+msgid "Status"
+msgstr "Stato"
+
+#: templates/preferences.php:20
+msgid "Due date"
+msgstr "Data di scadenza"
+
+#: templates/preferences.php:31
+msgid "Ascending"
+msgstr "Crescente"
+
+#: templates/preferences.php:32
+msgid "Descending"
+msgstr "Decrescente"
+
+#: templates/preferences.php:39
+msgid "Hide completed"
+msgstr "Nascondi completate"
+
+#: templates/preferences.php:44
+msgid "No"
+msgstr "No"
+
+#: templates/preferences.php:45
+msgid "Yes"
+msgstr "Sì"
+
+#: templates/preferences.php:55
+msgid "Timezone"
+msgstr "Fuso orario"
+
+#: templates/preferences.php:58
+msgid "Set your current timezone"
+msgstr "Imposta il fuso orario corrente"
+
+#: templates/preferences.php:77
+msgid "Privacy"
+msgstr "Privacy"
+
+#: templates/preferences.php:80
+msgid "Manage your data"
+msgstr "Gestisci i tuoi dati"
+
+#: templates/preferences.php:84
+msgid "Delete all lists and tasks"
+msgstr "Elimina tutte le lista e attività"
+
+#: templates/preferences.php:85
+msgid "Export all lists and tasks"
+msgstr "Esporta tutte le lista e attività"
+
+#: templates/pro/item_due_recurring.php:3
+msgid "Repeat"
+msgstr "Ripeti"
+
+#: templates/root.php:22
+msgid "Collapse"
+msgstr "Comprimi"
+
+#: templates/root.php:23
+msgid "Expand"
+msgstr "Espandi"
+
+#: templates/root.php:61
+msgid "Toggle full screen"
+msgstr "Attiva/disattiva schermo intero"
+
+#. Plugin Name of the plugin/theme
+msgid "ListoWP Pro"
+msgstr "ListoWP Pro"
+
+#. Description of the plugin/theme
+msgid "Front-end To Do Lists for your WordPress users"
+msgstr "Lista attività front-end per i tuoi utenti WordPress"
+
+#. Author of the plugin/theme
+msgid "EmeraldWP"
+msgstr "EmeraldWP"
+
+#. Author URI of the plugin/theme
+msgid "https://ListoWP.com"
+msgstr "https://ListoWP.com"
+

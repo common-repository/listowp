@@ -1,0 +1,52 @@
+.lo-readmore {
+    position: relative;
+    color: var(--C-G400);
+
+    > i {
+        &:before {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:after {
+            content: "";
+        
+            position: absolute;
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1.75em;
+            height: 1.75em;
+            background-color: var(--DIVIDER--LIGHT);
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--T-O);
+            transition-duration: .4s;
+
+            .lo-task & {
+                display: none;
+            }
+        }
+    }
+
+    &:hover {
+        color: var(--C-G500);
+
+        > i {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:focus {
+        color: var(--C-G400);
+
+        &:hover {
+            color: var(--C-G500);
+        }
+    }
+}
+
+.lo-activate {}

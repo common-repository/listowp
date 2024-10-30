@@ -1,0 +1,1 @@
+<div class="lo-tasks__empty"><i class="fa-regular fa-circle-xmark"></i><?php echo __('No tasks here','listowp'); ?></div>

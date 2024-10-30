@@ -1,0 +1,44 @@
+.loa-btn {
+    --c: var(--C-G600);
+    --c-h: var(--C-G600);
+    --bg: transparent;
+    --bg-h: var(--C-G300);
+    --bdc: var(--C-G300);
+    --bdc-h: var(--C-G300);
+
+    display: inline-block;
+    height: 2.25rem;
+    padding-left: var(--PS);
+    padding-right: var(--PS);
+    border-radius: var(--R);
+    font-weight: 500;
+    color: var(--c);
+    background-color: var(--bg);
+    border: 2px solid var(--bdc);
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: var(--c-h);
+        background-color: var(--bg-h);
+        border: 2px solid var(--bdc-h);
+        box-shadow: none;
+        outline: none;
+    }
+
+    &:disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+}
+
+.loa-btn--action {
+    --c: var(--C-BRAND--DARK);
+    --c-h: #fff;
+    --bg: transparent;
+    --bg-h: var(--C-BRAND--DARK);
+    --bdc: var(--C-BRAND--DARK);
+    --bdc-h: var(--C-BRAND--DARK);
+}

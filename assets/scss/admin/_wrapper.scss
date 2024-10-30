@@ -1,0 +1,22 @@
+.toplevel_page_listowp,
+.listowp_page_listowp-license {
+    background-color: var(--C-G100);
+}
+
+.loa-wrapper {
+    --P: 20px;
+
+    max-width: 1500px;
+    padding-left: 15px;
+    padding-right: var(--P);
+
+    select,
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+    }
+
+    .loa-input--full {
+        width: 100% !important;
+    }
+}

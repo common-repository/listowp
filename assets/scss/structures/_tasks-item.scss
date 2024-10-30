@@ -1,0 +1,452 @@
+//
+// SINGLE TASK
+// ----------------------------------------------------------------
+// Single task wrapper
+// ----------------------------------------------------------------
+.lo-task {
+    --bg-color: var(--C-APP);
+    --shadow: var(--DIVIDER--LIGHT);
+    --shadow-hover-1: var(--C-G200);
+    --shadow-hover-2: var(--C-G100);
+
+    position: relative;
+    flex-shrink: 0;
+    color: var(--TC);
+    background-color: var(--bg-color);
+    box-shadow: 0 0 0 1px var(--shadow-hover-2);
+    transition: var(--T);
+
+    @include mq($from: desktop) {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--PXS);
+        box-shadow: 0 0 0 1px var(--shadow-hover-2);
+        border-radius: var(--R);
+
+        &:hover {
+            --bg-color: var(--C-APP);
+
+            color: var(--TC);
+            box-shadow: 0 0 0 1px var(--shadow-hover-1);
+        }
+
+        &:focus {
+            color: var(--TC);
+        }
+    }
+
+    &.lo-droptarget {
+        background-color: lightyellow;
+    }
+
+    &.lo-dragged {
+        background-color: var(--C-APP);
+        opacity: .8;
+        z-index: 100;
+    }
+}
+
+// task edit
+.lo-task__edit {}
+
+.lo-task__edit-toggle {
+    font-size: .85rem;
+    color: var(--C-G400);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--C-G500);
+    }
+}
+
+.lo-task__edit-form {
+    display: flex;
+    flex-direction: column;
+    padding: var(--PXS);
+
+    input.lo-input,
+    textarea.lo-input {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: none;
+
+        &:last-child {
+            font-size: .825rem;
+        }
+
+        &:focus {
+            background-color: var(--C-G50);
+            box-shadow: -2px 0 0 var(--C-G50), 2px 0 0 var(--C-G50);
+        }
+    }
+
+    @include mq($from: desktop) {
+        padding: var(--PS);
+    }
+}
+
+.lo-task__edit-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: calc(var(--PXS) / 2);
+    padding: var(--PXS);
+    padding-top: 0;
+
+    @include mq($from: desktop) {
+        padding: var(--PS);
+        padding-top: 0;
+    }
+}
+
+//
+// Single task checkbox - indicates whether task is done or not
+// ----------------------------------------------------------------
+.lo-task__check-wrapper {
+    position: absolute;
+    top: var(--PXS);
+    right: var(--PXS);
+
+    @include mq($from: desktop) {
+        top: var(--PS);
+        right: var(--PS);
+    }
+}
+
+.lo-task__check {
+    cursor: pointer;
+
+    > i {
+        font-size: 1.45rem;
+        color: var(--C-G200);
+        transition: var(--T);
+
+        .lo-task:hover & {
+            color: var(--C-G400);
+
+            &:before {
+                content: "\f058";
+            }
+        }
+
+        &:hover {
+            color: var(--C-DONE);
+
+            .lo-task:hover & {
+                color: var(--C-DONE);
+            }
+
+            &:before {
+                content: "\f058";
+
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+//
+// Single task name - wrapping name, description and meta
+// ----------------------------------------------------------------
+.lo-task__name {
+    flex-grow: 1;
+}
+
+//
+// Single task title
+// ----------------------------------------------------------------
+.lo-task__name-title {
+    display: flex;
+    align-items: center;
+    padding: var(--PXS);
+    padding-right: 40px;
+    line-height: var(--LHM);
+
+    strong {
+        min-width: 35px;
+        font-weight: normal;
+        
+        > span {
+            opacity: .5;
+        }
+    }
+
+    .lo-input {
+        width: 100%;
+    }
+
+    &:hover {
+        color: var(--TC);
+    }
+
+    .lo-task--done & {
+        color: var(--TC--LIGHT);
+        text-decoration: line-through;
+        text-decoration-color: var(--DIVIDER--DARK);
+    }
+
+    @include mq($from: desktop) {
+        padding: var(--PS);
+        padding-right: 45px;
+    }
+}
+
+//
+// Single task description
+// ----------------------------------------------------------------
+.lo-task__name-desc {
+    padding: var(--PXS);
+    padding-top: 0;
+    font-size: .825rem;
+    line-height: var(--LHX);
+    color: var(--TC--LIGHT);
+
+    @include mq($until: desktop) {
+        margin-top: var(--PXS);
+
+        &:empty {
+            margin-top: 0;
+        }
+    }
+
+    @include mq($from: desktop) {
+        padding: var(--PS);
+        padding-top: 0;
+    }
+}
+
+.lo-task__name-desc--empty {
+    opacity: .5;
+}
+
+//
+// Single task meta - displays expired date & time
+// ----------------------------------------------------------------
+.lo-task__name-meta {
+    position: relative;
+    z-index: unset;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--PXS) / 2);
+    padding: calc(var(--PXS) / 2);
+    padding-top: 0;
+
+    @include mq($from: desktop) {
+        .lo-task--edit & {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.lo-task__collapse {
+    position: absolute;
+    z-index: 5;
+    top: calc(var(--PXS) / 2);
+    right: calc(var(--PXS) / 2);
+    color: var(--TC--LIGHTEN);
+    transition: var(--T);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--TC);
+    }
+}
+
+.lo-task__delete {
+    cursor: pointer;
+
+    @include mq($from: desktop) {
+        margin-right: 0;
+    }
+}
+
+.lo-task__meta {
+    @include mq($from: desktop) {
+        position: relative;
+    }
+}
+
+.lo-task__meta-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(var(--PXS) / 2);
+    min-width: 90px;
+    height: 1.75rem;
+    padding-left: var(--PXS);
+    padding-right: var(--PXS);
+    font-size: .8rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: var(--C-G50);
+    border-radius: var(--R);
+    cursor: pointer;
+
+    .lo-task__meta:first-child & {
+        z-index: 1;
+    }
+
+    > i {
+        font-size: 1rem;
+        color: var(--C-G400);
+
+        .lo-task__meta--expired & {
+            color: var(--C-DUE);
+        }
+
+        .lo-task__meta--scheduled & {
+            color: var(--C-SCHEDULE);
+        }
+    }
+
+    .lo-dark & {
+        background-color: rgba(255,255,255, .025);
+    }
+
+    @include mq($from: desktop) {
+        &:hover {
+            > i {
+                color: var(--C-G500);
+        
+                .lo-task__meta--expired & {
+                    color: var(--C-DUE);
+                }
+        
+                .lo-task__meta--scheduled & {
+                    color: var(--C-SCHEDULE);
+                }
+            }
+        }
+    }
+}
+
+.lo-task__meta-actions {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--PXS) / 2);
+    margin-left: auto;
+    opacity: 0;
+    transition: var(--T-O);
+
+    .lo-task:hover &,
+    .lo-task--full & {
+        opacity: 1;
+    }
+
+    > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0;
+        background-color: var(--C-G50);
+        border-radius: var(--R);
+        transition: var(--T);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: var(--C-G50);
+
+            &:focus {
+                background-color: var(--C-G50);
+            }
+        }
+    }
+}
+
+.lo-task__meta-input {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.lo-task__meta-toggle {}
+
+.lo-task__meta--scheduled {
+    .lo-task__meta-info {
+        background-color: var(--C-SCHEDULE--LIGHTEN);
+    }
+}
+
+.lo-task__meta--expired {
+    .lo-task__meta-info {
+        background-color: var(--C-DUE--LIGHTEN);
+    }
+}
+
+.lo-task__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    color: #fff;
+    line-height: 1;
+    background-color: var(--C-INBOX);
+    border-radius: 50%;
+    cursor: pointer;
+
+    > span {
+        font-size: .825rem;
+        font-weight: 500;
+    }
+}
+
+.lo-task--full {
+    @include mq($until: desktop) {
+        --bg-color: var(--C-APP);
+
+        color: var(--TC);
+        box-shadow: 0 0 0 1px var(--shadow-hover-2);
+
+        .lo-task__check {
+            > i {
+                color: var(--C-G400);
+            }
+        }
+    }
+}
+
+//
+// Single task "done" class modifier
+// ----------------------------------------------------------------
+.lo-task--done {
+    --bg-color: var(--C-G50);
+    --shadow: var(--DIVIDER);
+
+    &:hover,
+    &:focus {
+        --bg-color: var(--C-G50);
+        --shadow: var(--DIVIDER--LIGHT);
+    }
+
+    .lo-task__check {
+        > i {
+            font-weight: bold;
+            color: var(--C-DONE);
+
+            &:before {
+                content: "\f058";
+            }
+
+            &:hover {
+                color: var(--C-G500);
+
+                &:before {
+                    content: "\f057";
+                }
+            }
+        }
+    }
+}

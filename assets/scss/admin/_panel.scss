@@ -1,0 +1,43 @@
+.loa-panel {
+    background-color: var(--C-APP);
+    border-radius: var(--RM);
+    box-shadow: 0 1px 2px var(--C-G300), 0 10px 20px var(--C-G200);
+}
+
+.loa-panel__header {
+    display: flex;
+    align-items: center;
+    gap: var(--P);
+    padding: var(--P);
+    background-color: var(--C-G50);
+    border-bottom: 1px solid var(--C-G200);
+    border-top-left-radius: var(--RM);
+    border-top-right-radius: var(--RM);
+}
+
+.loa-panel__name {
+    display: flex;
+    align-items: center;
+    gap: var(--PXS);
+    font-size: 1.25rem;
+
+    > span {
+        font-weight: 500;
+    }
+}
+
+.loa-panel__desc {
+    font-size: 1rem;
+    opacity: .8;
+
+    &:empty {
+        display: none;
+    }
+}
+
+.loa-panel__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--PXS);
+    padding: var(--P);
+}
